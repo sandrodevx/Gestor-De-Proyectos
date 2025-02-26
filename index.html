@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es"> <!-- Cambiado a "es" para coincidir con el idioma de la aplicación -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestor de Proyectos</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Chart.js -->
+    <link rel="stylesheet" href="styles.css"> <!-- Enlaza el archivo CSS -->
+</head>
+<body>
+    <div class="container">
+        <h1>Gestor de Proyectos</h1>
+
+        <!-- Formulario de Autenticación -->
+        <div id="auth-section">
+            <input type="text" id="username" placeholder="Usuario"> <!-- Campo de nombre de usuario -->
+            <input type="password" id="password" placeholder="Contraseña"> <!-- Campo de contraseña -->
+            <button id="login">Iniciar sesión</button> <!-- Botón de inicio de sesión -->
+            <button id="register">Registrarse</button> <!-- Botón de registro -->
+        </div>
+
+        <!-- Gestión de Proyectos -->
+        <div id="project-section" class="hidden">
+            <h2>Mis Proyectos</h2>
+            <div class="project-input">
+                <input type="text" id="projectName" placeholder="Nombre del proyecto"> <!-- Campo de nombre del proyecto -->
+                <input type="text" id="projectDescription" placeholder="Descripción"> <!-- Campo de descripción del proyecto -->
+                <input type="date" id="projectStartDate"> <!-- Campo de fecha de inicio del proyecto -->
+                <input type="date" id="projectEndDate"> <!-- Campo de fecha de finalización del proyecto -->
+                <button id="addProject">Agregar proyecto</button> <!-- Botón para agregar proyecto -->
+            </div>
+
+            <!-- Lista de Proyectos -->
+            <ul id="projectList"></ul>
+        </div>
+
+        <!-- Gestión de Tareas -->
+        <div id="task-section" class="hidden">
+            <h2>Tareas</h2>
+            <div class="task-input">
+                <input type="text" id="taskDescription" placeholder="Descripción de la tarea"> <!-- Campo de descripción de la tarea -->
+                <select id="taskPriority"> <!-- Selector de prioridad de la tarea -->
+                    <option value="alta">Alta</option>
+                    <option value="media">Media</option>
+                    <option value="baja">Baja</option>
+                </select>
+                <select id="taskStatus"> <!-- Selector de estado de la tarea -->
+                    <option value="pendiente">Pendiente</option>
+                    <option value="enProgreso">En progreso</option>
+                    <option value="completada">Completada</option>
+                </select>
+                <input type="date" id="taskDueDate"> <!-- Campo de fecha límite de la tarea -->
+                <button id="addTask">Agregar Tarea</button> <!-- Botón para agregar tarea -->
+            </div>
+
+            <!-- Lista de Tareas -->
+            <ul id="taskList"></ul>
+        </div>
+
+        <!-- Gráficos -->
+        <div class="charts">
+            <canvas id="barChart"></canvas> <!-- Gráfico de barras -->
+            <canvas id="pieChart"></canvas> <!-- Gráfico de pastel -->
+        </div>
+
+        <!-- Botón para exportar datos -->
+        <button id="exportData">Exportar CSV</button> <!-- Botón para exportar datos -->
+    </div>
+
+    <!-- Enlaza el archivo JavaScript -->
+    <script src="auth.js"></script> <!-- Lógica de autenticación -->
+    <script src="script.js"></script> <!-- Lógica principal -->
+</body>
+</html>
